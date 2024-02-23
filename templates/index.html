@@ -1,0 +1,93 @@
+{% extends 'master.html' %}
+{% load jalali_tags %}
+{% block title %} رزرو تنیس {% endblock %}
+{% block contend %}
+    <body>
+    <div id="booking" class="section">
+        <div class="section-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7 col-md-push-5">
+                        <div class="booking-cta">
+                            <h1>رزرو تایم تنیس</h1>
+                            <p>متنی که بعدا اضافه خواهد شد 1 .
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-md-pull-7">
+                        <a style="display: block; width: 200px; height: 100px; line-height: 100px; text-align: center;
+text-decoration: none; color: white; font-size: 40px; margin: 10px; float: left"
+                           href="#" class="button blue">آدینه</a>
+                        <a style="display: block; width: 200px; height: 100px; line-height: 200px; text-align: center;
+text-decoration: none; color: white; font-size: 40px; margin: 20px; float: left"
+                           href="#" class="button red">رزرو تایم</a>
+                        {#                        <div class="booking-form">#}
+                        {#                            <form method="post">#}
+                        {#                                <div class="form-group">#}
+                        {#                                    <span class="form-label">نام و نام خانوادگی</span>#}
+                        {#                                    <input class="form-control" type="text"#}
+                        {#                                           placeholder="Enter a destination or hotel name">#}
+                        {#                                </div>#}
+                        {#                                <div class="row">#}
+                        {#                                    <div class="col-sm-6">#}
+                        {#                                        <div class="form-group">#}
+                        {#                                            <span class="form-label">Check In</span>#}
+                        {#                                            <input class="form-control" type="date" required>#}
+                        {#                                            {{ time_slots.first }}#}
+                        {#                                            <p>{{ time_slots.first.date | to_jalali:'%y/%m/%d _ %H:%M:%S' }}</p>#}
+                        {#                                        </div>#}
+                        {#                                    </div>#}
+                        {#                                    <div class="col-sm-6">#}
+                        {#                                        <div class="form-group">#}
+                        {#                                            <span class="form-label">Check out</span>#}
+                        {#                                            <input class="form-control" type="date" required>#}
+                        {#                                        </div>#}
+                        {#                                    </div>#}
+                        {#                                </div>#}
+                        {#                                <div class="row">#}
+                        {#                                    <div class="col-sm-4">#}
+                        {#                                        <div class="form-group">#}
+                        {#                                            <span class="form-label">Rooms</span>#}
+                        {#                                            <select class="form-control">#}
+                        {#                                                <option>1</option>#}
+                        {#                                                <option>2</option>#}
+                        {#                                                <option>3</option>#}
+                        {#                                            </select>#}
+                        {#                                            <span class="select-arrow"></span>#}
+                        {#                                        </div>#}
+                        {#                                    </div>#}
+                        {#                                    <div class="col-sm-4">#}
+                        {#                                        <div class="form-group">#}
+                        {#                                            <span class="form-label">Adults</span>#}
+                        {#                                            <select class="form-control">#}
+                        {#                                                <option>1</option>#}
+                        {#                                                <option>2</option>#}
+                        {#                                                <option>3</option>#}
+                        {#                                            </select>#}
+                        {#                                            <span class="select-arrow"></span>#}
+                        {#                                        </div>#}
+                        {#                                    </div>#}
+                        {#                                    <div class="col-sm-4">#}
+                        {#                                        <div class="form-group">#}
+                        {#                                            <span class="form-label">Children</span>#}
+                        {#                                            <select class="form-control">#}
+                        {#                                                <option>0</option>#}
+                        {#                                                <option>1</option>#}
+                        {#                                                <option>2</option>#}
+                        {#                                            </select>#}
+                        {#                                            <span class="select-arrow"></span>#}
+                        {#                                        </div>#}
+                        {#                                    </div>#}
+                        {#                                </div>#}
+                        {#                                <div class="form-btn">#}
+                        {#                                    <button class="submit-btn">Check availability</button>#}
+                        {#                                </div>#}
+                        {#                            </form>#}
+                        {#                        </div>#}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+{% endblock %}
