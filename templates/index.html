@@ -8,19 +8,19 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-7 col-md-push-5">
-                        <div class="booking-cta">
-                            <h1>رزرو تایم تنیس</h1>
-                            <p>متنی که بعدا اضافه خواهد شد 1 .
+                        <div style="text-align: center" class="booking-cta">
+                            <h1>{{ text.titre1 }}</h1>
+                            <p>{{ text.text1 }}
                             </p>
                         </div>
                     </div>
                     <div class="col-md-4 col-md-pull-7">
-                        <a style="display: block; width: 200px; height: 100px; line-height: 100px; text-align: center;
+                        <a style="display: block; width: 200px; height: 100px; line-height: 100px; text-align: right;
 text-decoration: none; color: white; font-size: 40px; margin: 10px; float: left"
-                           href="#" class="button blue">آدینه</a>
-                        <a style="display: block; width: 200px; height: 100px; line-height: 200px; text-align: center;
+                           href="{% url 'reservation:adineh' %}" class="button blue">آدینه</a>
+                        <a style="display: block; width: 200px; height: 100px; line-height: 200px; text-align: right;
 text-decoration: none; color: white; font-size: 40px; margin: 20px; float: left"
-                           href="#" class="button red">رزرو تایم</a>
+                           href="{% url 'reservation:days' %}" class="button red">رزرو تایم</a>
                         {#                        <div class="booking-form">#}
                         {#                            <form method="post">#}
                         {#                                <div class="form-group">#}

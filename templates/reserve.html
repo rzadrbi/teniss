@@ -8,15 +8,16 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-7 col-md-push-5">
-                        <div class="booking-cta">
-                            <h1 style="text-align: right">رزرو تایم تنیس</h1>
-                            <p style="text-align: right">متنی که بعدا اضافه خواهد شد 1 .
+                        <div style="text-align: center" class="booking-cta">
+                            <h1 style="text-align: right">{{ text.titre8 }}</h1>
+                            <p style="text-align: right">{{ text.text8 }}
                             </p>
                         </div>
                     </div>
                     <div class="col-md-4 col-md-pull-7">
                         <div class="booking-form">
                             <form method="post">
+                                {% csrf_token %}
                                 <div class="form-group">
                                     <p style="text-align: right">:تایم مورد نظر</p>
                                     <p style="text-align: center">{{ Tslot.date | to_jalali:'%y/%m/%d' }}<br>
@@ -24,11 +25,11 @@
                                     {{ Tslot.start_time }} - {{ Tslot.end_time }}</p>
                                 </div>
                                 <div class="form-group">
-                                    <input style="text-align: right" class="form-control" type="text"
+                                    <input name="user_name" style="text-align: right" class="form-control" type="text"
                                            placeholder="نام و نام خانوادگی خود را وارد کنید">
                                 </div>
                                 <div class="form-group">
-                                    <input style="text-align: right" class="form-control" type="text"
+                                    <input name="user_phone" style="text-align: right" class="form-control" type="text"
                                            placeholder="شماره موبایل خود را وارد کنید">
                                 </div>
                                 <div style="text-align: center" class="form-btn">

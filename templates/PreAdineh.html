@@ -1,0 +1,51 @@
+{% extends 'master.html' %}
+{% load jalali_tags %}
+{% block title %} رزرو تنیس {% endblock %}
+{% block contend %}
+    <body>
+    <div id="booking" class="section">
+        <div class="section-center">
+            <div class="container">
+                <div class="row">
+                    <div style="text-align: center"  class="col-md-7 col-md-push-5">
+                        <div class="booking-cta">
+                            <h1 style="text-align: right">{{ text.titre2 }}</h1>
+                            <p style="text-align: right">{{ text.text2 }}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-md-pull-7">
+                        <div class="booking-form">
+                            <form method="post">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <input name="user_fullname" style="text-align: right" class="form-control"
+                                           type="text"
+                                           placeholder="نام و نام خانوادگی خود را وارد کنید">
+                                </div>
+                                <div class="form-group">
+                                    <input name="user_phone" style="text-align: right" class="form-control" type="text"
+                                           placeholder="شماره همراه خود را وارد کنید">
+                                </div>
+                                <div class="form-group">
+                                    <input name="user_age" style="text-align: right" class="form-control" type="text"
+                                           placeholder="سن خود را وارد کنید">
+                                </div>
+                                <div style="text-align: center" class="form-btn">
+                                    <button class="submit-btn">صدور فاکتور و پرداخت</button>
+                                </div>
+                                <div style="text-align: center; color: white">
+                                     <a href="{% url 'reservation:adineh_list' %}"
+                                     class="form-btn">
+                                         <h4 class="submit-btn">مشاهده لیست شرکت کنندگان</h4>
+                                         </a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+{% endblock %}

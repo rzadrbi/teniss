@@ -90,6 +90,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+TEMPLATE_CONTEXT_PROCESSORS = [
+    "contex_processors.contex.get_texts"
+]
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 

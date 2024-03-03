@@ -8,23 +8,20 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-7 col-md-push-5">
-                        <div style="text-align: center" class="booking-cta">
-                            <h1>{{ text.titre4 }}</h1>
-                            <p>{{ text.text4 }}
+                        <div class="booking-cta">
+                            <h1>رزرو تایم تنیس</h1>
+                            <p>متنی که بعدا اضافه خواهد شد 1 .
                             </p>
                         </div>
                     </div>
                     <div class="col-md-4 col-md-pull-7">
-                        {% for object in times %}
+                        {% for object in object %}
                             <div class="list-group">
-                                <a href="{% url 'reservation:reservation' object.id %}"
-                                   class="list-group-item list-group-item-action flex-column align-items-start active">
+                                <div class="list-group-item list-group-item-action flex-column align-items-start active">
                                     <div class="d-flex w-100 justify-content-between">
-                                        <h5 class="mb-1 text-center">{{ object.date | to_jalali:'%y/%m/%d' }}<br>
-                                            {{ object.court }}<br>
-                                            {{ object.start_time }}-{{ object.end_time }}</h5>
+                                        <h5 class="mb-1 text-center">{{ object.name }}</h5>
                                     </div>
-                                </a>
+                                </div>
                             </div>
                         {% endfor %}
                         <div class="pagination">
@@ -33,11 +30,11 @@
                                     <a style="color: white; font-size: 20px; "
                                        href="?page={{ page_obj.previous_page_number }}">قبل</a>
                                 {% endif %}
-                        
+
                                 <span class="current" style="color: darkblue; font-size: 20px; ">
                                       صفحه{{ page_obj.number }} از {{ page_obj.paginator.num_pages }}
                                 </span>
-                        
+
                                 {% if page_obj.has_next %}
                                     <a style="color: white; font-size: 20px; " href="?page={{ page_obj.next_page_number }}">بعد</a>
                                 {% endif %}
