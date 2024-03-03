@@ -243,7 +243,7 @@
       <workItem from="1709377830529" duration="776000" />
       <workItem from="1709390955979" duration="6000" />
       <workItem from="1709417111333" duration="466000" />
-      <workItem from="1709504844559" duration="4732000" />
+      <workItem from="1709504844559" duration="5399000" />
     </task>
     <task id="LOCAL-00001" summary="before testing git repos">
       <option name="closed" value="true" />
@@ -269,7 +269,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709508382477</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="test runflare">
+      <option name="closed" value="true" />
+      <created>1709509725453</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1709509725453</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
