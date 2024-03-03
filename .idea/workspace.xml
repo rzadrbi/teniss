@@ -6,18 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="234687ae-0ae9-4705-8c02-3729aa865e00" name="Changes" comment="before testing git repos">
       <changelist_data name="reza darabi" email="" />
-      <change afterPath="$PROJECT_DIR$/contex_processors/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contex_processors/contex.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/PreAdineh.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/ahineh_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Teniss/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Teniss/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservation/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservation/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/days.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/days.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/reserv.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reserve.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/times.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/times.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,8 +30,29 @@
         <option value="reza darabi" />
       </list>
     </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitLabMergeRequestFiltersHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPENED",
+    "assignee": {
+      "type": "org.jetbrains.plugins.gitlab.mergerequest.ui.filters.GitLabMergeRequestsFiltersValue.MergeRequestsMemberFilterValue.MergeRequestsAssigneeFilterValue",
+      "username": "rzadrbi",
+      "fullname": "reza darabi"
+    }
+  }
+}]]></component>
+  <component name="GitLabMergeRequestsSettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "first": "https://gitlab.com/reza4740951/teniss_booking.git",
+    "second": "c3cc62af-b288-4852-8505-c2b993a8ba00"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -65,14 +75,14 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "dart.analysis.tool.window.visible": "false",
     "django.template.preview.state": "SHOW_EDITOR",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "3c823cf9",
     "last_opened_file_path": "/home/rzadrbi/PycharmProjects/Teniss",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "project.propVCSSupport.Mappings",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -188,6 +198,8 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.views" />
+        <item itemvalue="Python.jdate" />
         <item itemvalue="Python.days" />
         <item itemvalue="Python.views" />
         <item itemvalue="Python.jdate" />
@@ -231,7 +243,7 @@
       <workItem from="1709377830529" duration="776000" />
       <workItem from="1709390955979" duration="6000" />
       <workItem from="1709417111333" duration="466000" />
-      <workItem from="1709504844559" duration="1985000" />
+      <workItem from="1709504844559" duration="2949000" />
     </task>
     <task id="LOCAL-00001" summary="before testing git repos">
       <option name="closed" value="true" />
