@@ -14,12 +14,7 @@
                             </p>
                         </div>
                     </div>
-                    <div  class="col-md-4 col-md-pull-7">
-                        {#                        {% for object in days %}#}
-                        {#                            <a style="display: block; width: 100px; height: 50px; line-height: 50px; text-align: center;#}
-                        {#text-decoration: none; color: white; font-size: 40px; margin: 20px; float: left"#}
-                        {#                           href="#" class="button blue">{{ object }}</a>#}
-                        {#                        {% endfor %}#}
+                    <div class="col-md-4 col-md-pull-7">
                         {% for object in dates %}
                             <div class="list-group">
                                 <a href="{% url 'reservation:times' object.date %}"
