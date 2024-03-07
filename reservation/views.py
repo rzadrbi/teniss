@@ -7,8 +7,6 @@ from django.shortcuts import render
 from .models import TimeSlot, Adineh, Booking, texts
 
 
-
-
 def index(request):
     text = texts.objects.all().first()
     today = timezone.localtime(timezone.now()).date()
@@ -42,7 +40,7 @@ def index(request):
         TimeSlot.objects.get_or_create(court_id=2, date=date, start_time='21:00', end_time='22:00')
         TimeSlot.objects.get_or_create(court_id=2, date=date, start_time='22:00', end_time='23:00')
         TimeSlot.objects.get_or_create(court_id=2, date=date, start_time='23:00', end_time='00:00')
-    return render(request, 'index.html', {'time_slots': TimeSlot.objects.all(), 'text': text })
+    return render(request, 'index.html', {'time_slots': TimeSlot.objects.all(), 'text': text})
 
 
 class WeekDay(ListView):
@@ -109,4 +107,10 @@ def PreAdineh(request):
 
 def AdinehList(request):
     adenines = Adineh.objects.filter(confirmed=True, is_paid=True)
-    return render(request, 'ahineh_list.html', {"object":adenines})
+    text = texts.objects.all().first()
+    return render(request, 'ahineh_list.html', {"object": adenines, "text": text})
+
+def page_not_found_view(request, exception):
+    response = render(request, "404.html")
+    response.status_code = 404
+    return response
