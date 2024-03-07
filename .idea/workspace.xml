@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="234687ae-0ae9-4705-8c02-3729aa865e00" name="Changes" comment="test commit2">
+    <list default="true" id="234687ae-0ae9-4705-8c02-3729aa865e00" name="Changes" comment="fix database dir">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Teniss/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Teniss/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,6 +109,9 @@
       <recent name="$PROJECT_DIR$/assets/img" />
       <recent name="$PROJECT_DIR$/assets" />
       <recent name="$PROJECT_DIR$/templates" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/database" />
     </key>
   </component>
   <component name="RunManager" selected="Django Server.Teniss">
@@ -260,7 +265,9 @@
       <workItem from="1709417111333" duration="466000" />
       <workItem from="1709504844559" duration="5706000" />
       <workItem from="1709660453910" duration="96000" />
-      <workItem from="1709736866046" duration="305000" />
+      <workItem from="1709736866046" duration="2707000" />
+      <workItem from="1709751989146" duration="1537000" />
+      <workItem from="1709808152146" duration="3150000" />
     </task>
     <task id="LOCAL-00001" summary="before testing git repos">
       <option name="closed" value="true" />
@@ -318,7 +325,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709510583997</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="fix database dir">
+      <option name="closed" value="true" />
+      <created>1709737184867</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1709737184867</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -346,7 +361,8 @@
     <MESSAGE value="test runflare" />
     <MESSAGE value="test commit" />
     <MESSAGE value="test commit2" />
-    <option name="LAST_COMMIT_MESSAGE" value="test commit2" />
+    <MESSAGE value="fix database dir" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix database dir" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Teniss$views.coverage" NAME="views Coverage Results" MODIFIED="1708205754091" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/reservation" />
