@@ -1,7 +1,19 @@
 {% extends 'master.html' %}
 {% load jalali_tags %}
+{% load static %}
 {% block title %} رزرو تنیس {% endblock %}
 {% block contend %}
+    <style>
+
+        @font-face {
+            font-family: "yekan";
+            src: url("{% static 'fonts/Yekan Boom.ttf' %}") format("truetype");
+        }
+        
+        .font {
+            font-family: yekan;
+        }
+    </style>
     <body>
     <div id="booking" class="section">
         <div class="section-center">
@@ -9,14 +21,14 @@
                 <div class="row">
                     <div class="col-md-7 col-md-push-5">
                         <div style="text-align: center" class="booking-cta">
-                            <h1>{{ text.titre5 }}</h1>
-                            <p>{{ text.text5 }}
+                            <h1 class="font">{{ text.titre5 }}</h1>
+                            <p class="font">{{ text.text5 }}
                             </p>
                         </div>
                     </div>
                     <div class="col-md-4 col-md-pull-7">
                         {% for object in object %}
-                            <div class="list-group">
+                            <div class="list-group font">
                                 <div class="list-group-item list-group-item-action flex-column align-items-start active">
                                     <div class="d-flex w-100 justify-content-between">
                                         <h5 class="mb-1 text-center">{{ object.name }}</h5>
@@ -24,7 +36,7 @@
                                 </div>
                             </div>
                         {% endfor %}
-                        <div class="pagination">
+                        <div class="pagination font">
                             <span class="step-links ">
                                 {% if page_obj.has_previous %}
                                     <a style="color: white; font-size: 20px; "

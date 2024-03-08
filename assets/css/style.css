@@ -1,3 +1,9 @@
+
+@font-face {
+font-family: "yekan";
+src: url("../fonts/Yekan Boom.ttf") format("truetype");
+}
+
 .section {
 	position: relative;
 	height: 100vh;
