@@ -2,6 +2,23 @@
 {% load jalali_tags %}
 {% block title %} رزرو تنیس {% endblock %}
 {% block contend %}
+    <style>
+        .button {
+            width: 400px;
+            line-height: 50px;
+            font-size: 30px;
+            text-align: center;
+            margin: auto;
+            display: block;
+            padding: 50px 60px;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+        
+        
+    </style>
     <body>
     <div id="booking" class="section">
         <div class="section-center">
@@ -14,13 +31,35 @@
                             </p>
                         </div>
                     </div>
-                    <div class="col-md-4 col-md-pull-7">
-                        <a style="display: block; width: 200px; height: 100px; line-height: 100px; text-align: right;
-text-decoration: none; color: white; font-size: 40px; margin: 10px; float: left"
-                           href="{% url 'reservation:adineh' %}" class="button blue">آدینه</a>
-                        <a style="display: block; width: 200px; height: 100px; line-height: 200px; text-align: right;
-text-decoration: none; color: white; font-size: 40px; margin: 20px; float: left"
-                           href="{% url 'reservation:days' %}" class="button red">رزرو تایم</a>
+{#                    <div class="col-md-4 col-md-pull-7">#}
+{#                        <a style="display: block; width: 200px; height: 100px; line-height: 100px;#}
+{#                                        text-decoration: none; color: white; font-size: 40px"#}
+{#                           href="{% url 'reservation:adineh' %}">آدینه</a>#}
+{#                        <a style="display: block; width: 200px; height: 100px; line-height: 200px;#}
+{#                                        text-decoration: none; color: white; font-size: 40px"#}
+{#                           href="{% url 'reservation:days' %}">رزرو تایم</a>#}
+{#                    </div>#}
+{#                    <div class="col-md-4 col-md-pull-7">#}
+{#                        <div style="" class="list-group">#}
+{#                            <a href="{% url 'reservation:adineh' %}"#}
+{#                               class="list-group-item list-group-item-action flex-column align-items-start active">#}
+{#                                <div class="d-flex w-100 justify-content-between">#}
+{#                                    <h5 class="mb-1 text-center">آدینه<br>#}
+{#                                </div>#}
+{#                            </a>#}
+{#                        </div>#}
+{#                        <div class="list-group ">#}
+{#                            <a href="{% url 'reservation:days' %}"#}
+{#                               class="list-group-item list-group-item-action flex-column align-items-start active">#}
+{#                                <div class="d-flex w-100 justify-content-between">#}
+{#                                    <h5 class="mb-1 text-center">رزرو تایم <br>#}
+{#                                </div>#}
+{#                            </a>#}
+{#                        </div>#}
+{#                    </div>#}
+                    <div class="col-md-5 col-md-pull-7">
+                    <a class="button" href="{% url 'reservation:adineh' %}">آدینه </a>
+                    <a class="button" href="{% url 'reservation:days' %}">رزرو تایم</a>
                     </div>
                 </div>
             </div>
