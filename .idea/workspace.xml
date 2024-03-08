@@ -4,20 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="234687ae-0ae9-4705-8c02-3729aa865e00" name="Changes" comment="fixing index and waiting for paymend">
-      <change afterPath="$PROJECT_DIR$/assets/fonts/Dast Nevis.OTF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/fonts/Yekan Boom.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Teniss/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Teniss/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/PreAdineh.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/PreAdineh.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ahineh_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ahineh_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/days.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/days.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+    <list default="true" id="234687ae-0ae9-4705-8c02-3729aa865e00" name="Changes" comment="18:06">
+      <change afterPath="$PROJECT_DIR$/assets/img/Unsaved Image 5.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/master.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/master.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/reserve.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reserve.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/times.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/times.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/weekdays.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/weekdays.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +34,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="3c823cf9781d41abb92817d6f55d388e6ddf9cce" />
+        <entry key="$PROJECT_DIR$" value="35d1697a8d218c84c2d6fc11500866404b304e1f" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -102,7 +92,7 @@
     "dart.analysis.tool.window.visible": "false",
     "django.template.preview.state": "SHOW_EDITOR",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "/home/rzadrbi/PycharmProjects/Teniss/assets/fonts",
+    "last_opened_file_path": "/home/rzadrbi/PycharmProjects/Teniss/assets/img",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -114,9 +104,9 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/img" />
       <recent name="$PROJECT_DIR$/assets/fonts" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/assets/img" />
       <recent name="$PROJECT_DIR$/assets" />
       <recent name="$PROJECT_DIR$/templates" />
     </key>
