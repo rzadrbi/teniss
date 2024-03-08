@@ -26,6 +26,8 @@ class texts(models.Model):
     text7 = models.TextField(verbose_name='متن صفحه رزرو تایم')
     titre8 = models.CharField(max_length=500, verbose_name='تیتر صفحه وارد کردن مشخصات رزرو تایم')
     text8 = models.TextField(verbose_name='متن صفحه وارد کردن مشخصات رزرو تایم')
+    titre9 = models.CharField(max_length=500, verbose_name='تیتر صفحه جدول', default='s')
+    text9 = models.TextField(verbose_name='متن صفحه جدول', default='s')
 
     def __str__(self):
         return (f'{self.titre1} {self.titre2} {self.titre3} {self.titre4} {self.titre5} {self.titre6} {self.titre7}'
@@ -63,3 +65,11 @@ class Adineh(models.Model):
 
     def __str__(self):
         return f'{self.name} - {self.age}'
+
+
+class match_tree(models.Model):
+    name = models.CharField(max_length=100)
+    tree = models.ImageField(upload_to='treepic')
+
+    def __str__(self):
+        return f'{self.name} - {self.tree}'

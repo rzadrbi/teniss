@@ -1,7 +1,7 @@
 {% extends 'master.html' %}
 {% load jalali_tags %}
 {% load static %}
-{% block title %} رزرو تنیس {% endblock %}
+{% block title %} پرتو تنیس {% endblock %}
 {% block contend %}
     <style>
 
@@ -34,8 +34,7 @@
                     <div class="col-md-7 col-md-push-5">
                         <div style="text-align: center" class="booking-cta">
                             <h1 class="font">{{ text.titre4 }}</h1>
-                            <p class="font">روز انتخابی شما : {{ times.d | to_jalali:'%y/%m/%d' }} <br>
-                                {{ text.text4 }}
+                            <p class="font"> {{ text.text4 }}
                             </p>
                         </div>
                     </div>
@@ -45,8 +44,8 @@
                                 <a href="{% url 'reservation:reservation' object.id %}"
                                    class="list-group-item list-group-item-action flex-column align-items-start active">
                                     <div class="d-flex w-100 justify-content-between">
-                                        <h3 class="mb-1 text-center">
-                                            {{ object.court }}
+                                        <h3 class="mb-1 text-center">{{ object.date | to_jalali:'%y/%m/%d'}}|
+                                            {{ object.court }}|
                                             {{ object.start_time }}-{{ object.end_time }}</h3>
                                     </div>
                                 </a>

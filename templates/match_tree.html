@@ -13,6 +13,13 @@
         .font {
             font-family: yekan;
         }
+        
+        .treepic {
+            width: 600px;
+            height: 400px;
+            max-width: 100%;
+            max-height: 100%;
+        }
     </style>
     <body>
     <div id="booking" class="section">
@@ -21,22 +28,14 @@
                 <div class="row">
                     <div class="col-md-7 col-md-push-5">
                         <div style="text-align: center" class="booking-cta">
-                            <h1 class="font">{{ text.titre3 }}</h1>
-                            <p class="font">{{ text.text3 }}
-                            </p>
+                            <h1 class="font">{{ text.titre9 }}</h1>
+                            <p class="font"> برای مشاهده جدول با کیفیت بالا لینک زیر را دانلود کنید :  <br>
+                                <a href="{{ MatchTree.tree.url }}">لینک دانلود</a> <br>
+                                {{ text.text9 }}</p>
                         </div>
                     </div>
                     <div class="col-md-4 col-md-pull-7">
-                        {% for object in dates %}
-                            <div class="list-group font">
-                                <a href="{% url 'reservation:times' object.date %}"
-                                   class="list-group-item list-group-item-action flex-column align-items-start active">
-                                    <div class="d-flex w-100 justify-content-between">
-                                        <h3 class="mb-1 text-center">{{ object.date | to_jalali:'%y/%m/%d' }}<br>
-                                    </div>
-                                </a>
-                            </div>
-                        {% endfor %}
+                        <img class="treepic" src="{{ MatchTree.tree.url }}" alt="tree_pic">
                     </div>
                 </div>
             </div>

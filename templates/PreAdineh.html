@@ -1,7 +1,7 @@
 {% extends 'master.html' %}
 {% load jalali_tags %}
 {% load static %}
-{% block title %} رزرو تنیس {% endblock %}
+{% block title %} پرتو تنیس {% endblock %}
 {% block contend %}
     <style>
 
@@ -9,7 +9,7 @@
             font-family: "yekan";
             src: url("{% static 'fonts/Yekan Boom.ttf' %}") format("truetype");
         }
-        
+
         .font {
             font-family: yekan;
         }
@@ -43,21 +43,30 @@
                                     <input name="user_age" style="text-align: right" class="form-control" type="text"
                                            placeholder="سن خود را وارد کنید">
                                 </div>
-                                <div style="text-align: center" class="form-btn">
-                                    <button class="submit-btn">صدور فاکتور و پرداخت</button>
-                                </div>
-                                <div style="text-align: center; color: white">
-                                     <a href="{% url 'reservation:adineh_list' %}"
-                                     class="form-btn">
-                                         <h4 class="submit-btn">مشاهده لیست شرکت کنندگان</h4>
-                                         </a>
-                                </div>
-                            </form>
+                                <div style="text-align: center;"
+                                " class="form-btn">
+                                <button class="submit-btn">صدور فاکتور و پرداخت</button>
                         </div>
+
+                        <div style="text-align: center; color: white; margin-top: 50px">
+                            <a href="{% url 'reservation:tree' %}"
+                               class="form-btn">
+                                <h4 class="submit-btn">مشاهده جدول مسابقه</h4>
+                            </a>
+                        </div>
+                        <div style="text-align: center; color: white;"
+                        ">
+                        <a href="{% url 'reservation:adineh_list' %}"
+                           class="form-btn">
+                            <h4 class="submit-btn">مشاهده لیست شرکت کنندگان</h4>
+                        </a>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>
+    </div>
+    </div>
     </div>
     </body>
 {% endblock %}

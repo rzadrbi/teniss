@@ -4,7 +4,7 @@ from datetime import timedelta
 from django.views.generic import ListView
 import pandas as pd
 from django.shortcuts import render
-from .models import TimeSlot, Adineh, Booking, texts
+from .models import TimeSlot, Adineh, Booking, texts, match_tree
 
 
 def index(request):
@@ -68,6 +68,7 @@ class TimeView(ListView):
     def get_context_data(self, **kwargs):
         contex = super().get_context_data()
         contex['text'] = texts.objects.all().first()
+        contex['selected_date'] = self.kwargs['date']
         return contex
 
 
@@ -114,3 +115,9 @@ def page_not_found_view(request, exception):
     response = render(request, "404.html")
     response.status_code = 404
     return response
+
+
+def match_tree_view(request):
+    tree = match_tree.objects.all().first()
+    text = texts.objects.all().first()
+    return render(request, 'match_tree.html', {'MatchTree': tree, "text": text})

@@ -11,4 +11,5 @@ urlpatterns = [
     path('times/<str:date>', views.TimeView.as_view(), name='times'),
     path('adineh_list', views.AdinehList, name='adineh_list'),
     path('adineh', views.PreAdineh, name='adineh'),
+    path('tree', views.match_tree_view, name='tree'),
 ]

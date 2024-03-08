@@ -1,6 +1,7 @@
 from django.contrib import admin
-from reservation.models import TimeSlot, Booking, Teniss_Court, Adineh, texts
+from reservation.models import TimeSlot, Booking, Teniss_Court, Adineh, texts, match_tree
 from jalali_date.admin import ModelAdminJalaliMixin
+
 
 @admin.register(Adineh)
 class AdinehAdmin(ModelAdminJalaliMixin, admin.ModelAdmin):
@@ -9,6 +10,11 @@ class AdinehAdmin(ModelAdminJalaliMixin, admin.ModelAdmin):
 
 @admin.register(Teniss_Court)
 class ReservationAdmin(ModelAdminJalaliMixin, admin.ModelAdmin):
+    list_display = ('name',)
+
+
+@admin.register(match_tree)
+class treeAdmin(ModelAdminJalaliMixin, admin.ModelAdmin):
     list_display = ('name',)
 
 
@@ -23,9 +29,7 @@ class ReservationAdmin(ModelAdminJalaliMixin, admin.ModelAdmin):
     list_display = ('time_slot', 'full_name', 'confirmed', 'is_paid')
     list_filter = ('confirmed', 'is_paid')
 
+
 @admin.register(texts)
 class textsAdmin(ModelAdminJalaliMixin, admin.ModelAdmin):
     list_display = ('titre1', )
-
-
-
