@@ -74,9 +74,27 @@
                     {#                            </a>#}
                     {#                        </div>#}
                     {#                    </div>#}
+                    {#                    <div class="col-md-5 col-md-pull-7">#}
+                    {#                        <a class="button font" href="{% url 'reservation:adineh' %}">آدینه </a>#}
+                    {#                        <a class="button font" href="{% url 'reservation:days' %}">رزرو تایم</a>#}
+                    {#                    </div>#}
                     <div class="col-md-5 col-md-pull-7">
-                        <a class="button font" href="{% url 'reservation:adineh' %}">آدینه </a>
-                        <a class="button font" href="{% url 'reservation:days' %}">رزرو تایم</a>
+                        <div class="list-group font">
+                            <a href="{% url 'reservation:adineh' %}"
+                               class="list-group-item list-group-item-action flex-column align-items-start active">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h3 class="mb-1 text-center">آدینه<br>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="list-group font">
+                            <a href="{% url 'reservation:days' %}"
+                               class="list-group-item list-group-item-action flex-column align-items-start active">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h3 class="mb-1 text-center">رزرو تایم<br>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

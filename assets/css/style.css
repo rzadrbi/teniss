@@ -20,7 +20,7 @@ src: url("../fonts/Yekan Boom.ttf") format("truetype");
 
 #booking {
 	font-family: 'Montserrat', sans-serif;
-	background-image: url('../img/background.jpg');
+	background-image: url('../img/Background.jpg');
 	background-size: cover;
 	background-position: center;
 }
