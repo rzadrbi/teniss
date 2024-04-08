@@ -4,15 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="234687ae-0ae9-4705-8c02-3729aa865e00" name="Changes" comment="done!">
+    <list default="true" id="234687ae-0ae9-4705-8c02-3729aa865e00" name="Changes" comment="almost finished">
+      <change afterPath="$PROJECT_DIR$/templates/factor.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/background.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/Background.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/background5jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/days.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/days.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/master.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/master.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/times.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/times.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Teniss/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Teniss/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,30 +82,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Django Server.Teniss.executor&quot;: &quot;Run&quot;,
-    &quot;Python.days.executor&quot;: &quot;Run&quot;,
-    &quot;Python.jdate.executor&quot;: &quot;Run&quot;,
-    &quot;Python.views.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/rzadrbi/PycharmProjects/Teniss/assets/img&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.gitlab.GitLabSettingsConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Django Server.Teniss.executor": "Run",
+    "Python.days.executor": "Run",
+    "Python.jdate.executor": "Run",
+    "Python.views.executor": "Run",
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "django.template.preview.state": "SHOW_EDITOR",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/home/rzadrbi/PycharmProjects/Teniss/assets/img",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.gitlab.GitLabSettingsConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/assets/img" />
@@ -234,7 +234,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-d68999036c7f-b11f5e8da5ad-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.14475.56" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-PY-241.14494.241" />
+        <option value="bundled-python-sdk-0509580d9d50-28c9f5db9ffe-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.14494.241" />
       </set>
     </attachedChunks>
   </component>
@@ -275,7 +276,12 @@
       <workItem from="1709808152146" duration="5040000" />
       <workItem from="1709895564650" duration="11036000" />
       <workItem from="1709917165096" duration="9122000" />
-      <workItem from="1710265514966" duration="8749000" />
+      <workItem from="1710265514966" duration="8845000" />
+      <workItem from="1710450749918" duration="1829000" />
+      <workItem from="1710713421075" duration="5000" />
+      <workItem from="1712071628534" duration="440000" />
+      <workItem from="1712428295081" duration="86000" />
+      <workItem from="1712595181278" duration="5580000" />
     </task>
     <task id="LOCAL-00001" summary="before testing git repos">
       <option name="closed" value="true" />
@@ -405,7 +411,23 @@
       <option name="project" value="LOCAL" />
       <updated>1709927013224</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="almost finished">
+      <option name="closed" value="true" />
+      <created>1710275809601</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1710275809601</updated>
+    </task>
+    <task id="LOCAL-00018" summary="almost finished">
+      <option name="closed" value="true" />
+      <created>1710275855795</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1710275855795</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -439,7 +461,8 @@
     <MESSAGE value="fixing index and waiting for paymend" />
     <MESSAGE value="2026" />
     <MESSAGE value="done!" />
-    <option name="LAST_COMMIT_MESSAGE" value="done!" />
+    <MESSAGE value="almost finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="almost finished" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Teniss$views.coverage" NAME="views Coverage Results" MODIFIED="1708205754091" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/reservation" />

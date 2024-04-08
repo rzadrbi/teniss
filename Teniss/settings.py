@@ -41,7 +41,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-
 ROOT_URLCONF = 'Teniss.urls'
 
 TEMPLATES = [
@@ -116,7 +115,6 @@ STATICFILES_DIRS = [
 ]
 STATIC_ROOT = path.join(BASE_DIR, 'static')
 
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
@@ -147,3 +145,5 @@ JALALI_DATE_DEFAULTS = {
         }
     },
 }
+
+MERCHANT = 'bfe71cb3-ff76-45fc-802d-0e972c6a909d'

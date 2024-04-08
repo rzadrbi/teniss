@@ -1,5 +1,5 @@
 from django.contrib import admin
-from reservation.models import TimeSlot, Booking, Teniss_Court, Adineh, texts, match_tree
+from reservation.models import TimeSlot, Booking, Teniss_Court, Adineh, texts, match_tree, price
 from jalali_date.admin import ModelAdminJalaliMixin
 
 
@@ -33,3 +33,8 @@ class ReservationAdmin(ModelAdminJalaliMixin, admin.ModelAdmin):
 @admin.register(texts)
 class textsAdmin(ModelAdminJalaliMixin, admin.ModelAdmin):
     list_display = ('titre1', )
+
+
+@admin.register(price)
+class textsAdmin(ModelAdminJalaliMixin, admin.ModelAdmin):
+    list_display = ('Time', 'Adineh',)

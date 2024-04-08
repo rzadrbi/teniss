@@ -12,4 +12,7 @@ urlpatterns = [
     path('adineh_list', views.AdinehList, name='adineh_list'),
     path('adineh', views.PreAdineh, name='adineh'),
     path('tree', views.match_tree_view, name='tree'),
+    path('factor/<int:pk>', views.factor, name='factor'),
+    path('request/<int:pk>', views.send_request, name='request'),
+    # path('verify/', views.verify, name='verify'),
 ]

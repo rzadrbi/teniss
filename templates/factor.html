@@ -1,0 +1,61 @@
+{% extends 'master.html' %}
+{% load jalali_tags %}
+{% load static %}
+{% block title %} پرتو تنیس {% endblock %}
+{% block contend %}
+    <style>
+
+        @font-face {
+            font-family: "yekan";
+            src: url("{% static 'fonts/Yekan Boom.ttf' %}") format("truetype");
+        }
+        
+        .font {
+            font-family: yekan;
+        }
+    </style>
+    <body>
+    <div id="booking" class="section">
+        <div class="section-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7 col-md-push-5">
+                        <div style="text-align: center" class="booking-cta">
+                            <h1 class="font" >{{ text.titre8 }}</h1>
+                            <p class="font" >{{ text.text8 }}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-md-pull-7">
+                        <div class="booking-form font">
+                            <form method="post">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <p style="text-align: right">:تایم مورد نظر</p>
+                                    <p style="text-align: center">{{ booking.time_slot.date | to_jalali:'%y/%m/%d' }}<br>
+                                    {{ booking.time_slot.court }}<br>
+                                    {{ booking.time_slot.start_time }} - {{ booking.time_slot.end_time }}</p>
+                                </div>
+                                <div class="form-group">
+                                    <p style="text-align: right">:نام و نام خانوادگی</p>
+                                    <p style="text-align: center">{{ booking.full_name }}</p>
+                                    <p style="text-align: right">:شماره موبایل</p>
+                                    <p style="text-align: center">{{ booking.phone_number }}</p>
+                                    
+                                </div>
+                                <div class="form-group">
+                                    <p style="text-align: right">:هزینه قابل پرداخت </p>
+                                    <p style="text-align: center">{{ price.Time }} </p>
+                                    <p style="text-align: center">(مبلغ به تومان میباشد)</p>
+                                </div>
+                                <div style="text-align: center" class="form-btn">
+                                    <button class="submit-btn">هدایت به صفحه پرداخت</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+{% endblock %}

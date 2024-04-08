@@ -46,7 +46,7 @@ class TimeSlot(models.Model):
 
 
 class Booking(models.Model):
-    time_slot = models.ForeignKey(TimeSlot, on_delete=models.CASCADE)
+    time_slot = models.ForeignKey(TimeSlot, on_delete=models.CASCADE,)
     full_name = models.CharField(max_length=100)
     phone_number = models.CharField(max_length=15)
     confirmed = models.BooleanField(default=False)
@@ -73,3 +73,13 @@ class match_tree(models.Model):
 
     def __str__(self):
         return f'{self.name} - {self.tree}'
+
+
+
+class price(models.Model):
+    Time = models.IntegerField()
+    Adineh = models.IntegerField()
+
+    def __str__(self):
+        return f'{self.Time} - {self.Adineh}'
+
