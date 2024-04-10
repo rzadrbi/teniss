@@ -9,7 +9,7 @@
             font-family: "yekan";
             src: url("{% static 'fonts/Yekan Boom.ttf' %}") format("truetype");
         }
-        
+
         .font {
             font-family: yekan;
         }
@@ -39,7 +39,7 @@
                         <div class="pagination font">
                             <span class="step-links ">
                                 {% if page_obj.has_previous %}
-                                    <a style="color: white; font-size: 20px; "
+                                    <a style="color: black; font-size: 20px; "
                                        href="?page={{ page_obj.previous_page_number }}">قبل</a>
                                 {% endif %}
 
@@ -48,7 +48,7 @@
                                 </span>
 
                                 {% if page_obj.has_next %}
-                                    <a style="color: white; font-size: 20px; " href="?page={{ page_obj.next_page_number }}">بعد</a>
+                                    <a style="color: black; font-size: 20px; " href="?page={{ page_obj.next_page_number }}">بعد</a>
                                 {% endif %}
                             </span>
                         </div>

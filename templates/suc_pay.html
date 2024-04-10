@@ -1,0 +1,74 @@
+{% extends 'master.html' %}
+{% load jalali_tags %}
+{% load static %}
+{% block title %} پرتو تنیس {% endblock %}
+{% block contend %}
+    <style>
+
+        @font-face {
+            font-family: "yekan";
+            src: url("{% static 'fonts/Yekan Boom.ttf' %}") format("truetype");
+        }
+
+        .font {
+            font-family: yekan;
+        }
+
+        .button {
+            width: 400px;
+            line-height: 50px;
+            font-size: 40px;
+            text-align: center;
+            margin: auto;
+            display: block;
+            padding: 50px 60px;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: background-color 0.5s linear;
+
+        }
+
+        .button:hover {
+            background-color: rgb(67, 126, 182);
+        }
+
+
+    </style>
+    <body>
+    <div id="booking" class="section">
+        <div class="section-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7 col-md-push-5">
+                        <div style="text-align: center" class="booking-cta">
+                            <h1 class="font">{{ text.titre1 }}</h1>
+                            <p class="font">{{ text.text1 }}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-md-pull-7">
+                        <div class="list-group font">
+                            <a href="{% url 'reservation:adineh' %}"
+                               class="list-group-item list-group-item-action flex-column align-items-start active">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h3 class="mb-1 text-center">آدینه<br>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="list-group font">
+                            <a href="{% url 'reservation:days' %}"
+                               class="list-group-item list-group-item-action flex-column align-items-start active">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h3 class="mb-1 text-center">رزرو تایم<br>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+{% endblock %}

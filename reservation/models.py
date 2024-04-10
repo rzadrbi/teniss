@@ -5,6 +5,10 @@ from django.db import models
 class Teniss_Court(models.Model):
     name = models.CharField(max_length=100)
 
+    class Meta:
+        verbose_name_plural = 'زمین ها'
+        verbose_name = 'زمین'
+
     def __str__(self):
         return f'{self.name}'
 
@@ -29,9 +33,14 @@ class texts(models.Model):
     titre9 = models.CharField(max_length=500, verbose_name='تیتر صفحه جدول', default='s')
     text9 = models.TextField(verbose_name='متن صفحه جدول', default='s')
 
+    class Meta:
+        verbose_name_plural = 'متن ها'
+        verbose_name = 'متن'
+
     def __str__(self):
         return (f'{self.titre1} {self.titre2} {self.titre3} {self.titre4} {self.titre5} {self.titre6} {self.titre7}'
                 f' {self.titre8}')
+
 
 class TimeSlot(models.Model):
     id = models.AutoField(primary_key=True, auto_created=True)
@@ -41,16 +50,25 @@ class TimeSlot(models.Model):
     end_time = models.TimeField()
     available = models.BooleanField(default=True)
 
+    class Meta:
+        verbose_name_plural = 'تایم ها'
+        verbose_name = 'تایم'
+
     def __str__(self):
         return f'{self.court.name} - {self.date} - {self.start_time} - {self.end_time}'
 
 
 class Booking(models.Model):
-    time_slot = models.ForeignKey(TimeSlot, on_delete=models.CASCADE,)
+    time_slot = models.ForeignKey(TimeSlot, on_delete=models.CASCADE, )
     full_name = models.CharField(max_length=100)
     phone_number = models.CharField(max_length=15)
     confirmed = models.BooleanField(default=False)
     is_paid = models.BooleanField(default=False)
+    refid = models.CharField(max_length=200, null=True, blank=True)
+
+    class Meta:
+        verbose_name_plural = 'رزرو ها'
+        verbose_name = 'رزرو'
 
     def __str__(self):
         return f'{self.time_slot} - {self.full_name} - {self.phone_number}'
@@ -62,6 +80,11 @@ class Adineh(models.Model):
     age = models.IntegerField()
     confirmed = models.BooleanField(default=False)
     is_paid = models.BooleanField(default=False)
+    refid = models.CharField(max_length=200, null=True, blank=True)
+
+    class Meta:
+        verbose_name_plural = 'آدینه ها'
+        verbose_name = 'آدینه'
 
     def __str__(self):
         return f'{self.name} - {self.age}'
@@ -71,15 +94,21 @@ class match_tree(models.Model):
     name = models.CharField(max_length=100)
     tree = models.ImageField(upload_to='treepic')
 
+    class Meta:
+        verbose_name_plural = 'جدول های مسابقه'
+        verbose_name = 'جدول مسابقه'
+
     def __str__(self):
         return f'{self.name} - {self.tree}'
-
 
 
 class price(models.Model):
     Time = models.IntegerField()
     Adineh = models.IntegerField()
 
+    class Meta:
+        verbose_name_plural = 'قیمت ها'
+        verbose_name = 'قیمت'
+
     def __str__(self):
         return f'{self.Time} - {self.Adineh}'
-

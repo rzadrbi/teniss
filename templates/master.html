@@ -56,5 +56,30 @@
 
 <link rel="stylesheet" href="{% static 'admin/jquery.ui.datepicker.jalali/themes/base/jquery-ui.min.css' %}">
 <script src="{% static 'admin/js/django_jalali.min.js' %}"></script>
+<script>    document.getElementById('form').addEventListener('submit', function (event) {
+        var yourField1 = document.getElementById('field1').value;
+        var yourField2 = document.getElementById('field2').value;
+        var yourField3 = document.getElementById('field3').value;
+        if (!yourField1) {
+            alert('لطفاً نام و نام خانوادگی خود را وارد کنید.');
+            event.preventDefault();
+        }
+        if (!yourField2) {
+            alert('لطفاً شماره موبایل خود را وارد کنید.');
+            event.preventDefault();
+        }
+        if (!yourField3) {
+            alert('لطفاً سن خود را وارد کنید.');
+            event.preventDefault();
+        }
+        if (isNaN(yourField3)) {
+            alert('مقدار سن حتما باید عدد باشد.');
+            event.preventDefault();
+        }
+        if (isNaN(yourField2)) {
+            alert('مقدار شماره موبایل حتما باید عدد باشد.');
+            event.preventDefault();
+        }
+    });</script>
 
 </html>
