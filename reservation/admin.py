@@ -6,6 +6,7 @@ from jalali_date.admin import ModelAdminJalaliMixin
 @admin.register(Adineh)
 class AdinehAdmin(ModelAdminJalaliMixin, admin.ModelAdmin):
     list_display = ('name', 'phone_number', 'age', 'is_paid', 'confirmed')
+    search_fields = ('refid',)
 
 
 @admin.register(Teniss_Court)
@@ -28,6 +29,7 @@ class ReservationAdmin(ModelAdminJalaliMixin, admin.ModelAdmin):
 class ReservationAdmin(ModelAdminJalaliMixin, admin.ModelAdmin):
     list_display = ('time_slot', 'full_name', 'confirmed', 'is_paid')
     list_filter = ('confirmed', 'is_paid')
+    search_fields = ('refid',)
 
 
 @admin.register(texts)

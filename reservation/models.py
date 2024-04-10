@@ -3,7 +3,7 @@ from django.db import models
 
 
 class Teniss_Court(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, verbose_name= 'نام زمین')
 
     class Meta:
         verbose_name_plural = 'زمین ها'
@@ -43,12 +43,12 @@ class texts(models.Model):
 
 
 class TimeSlot(models.Model):
-    id = models.AutoField(primary_key=True, auto_created=True)
-    court = models.ForeignKey(Teniss_Court, on_delete=models.CASCADE)
-    date = models.DateField()
-    start_time = models.TimeField()
-    end_time = models.TimeField()
-    available = models.BooleanField(default=True)
+    id = models.AutoField(primary_key=True, auto_created=True, verbose_name= 'ایدی')
+    court = models.ForeignKey(Teniss_Court, on_delete=models.CASCADE, verbose_name= 'زمین')
+    date = models.DateField(verbose_name= 'روز')
+    start_time = models.TimeField(verbose_name= 'تاریخ شروع')
+    end_time = models.TimeField(verbose_name= 'تاریخ اتمام')
+    available = models.BooleanField(default=True, verbose_name= 'در دسترس')
 
     class Meta:
         verbose_name_plural = 'تایم ها'
@@ -59,12 +59,12 @@ class TimeSlot(models.Model):
 
 
 class Booking(models.Model):
-    time_slot = models.ForeignKey(TimeSlot, on_delete=models.CASCADE, )
-    full_name = models.CharField(max_length=100)
-    phone_number = models.CharField(max_length=15)
-    confirmed = models.BooleanField(default=False)
-    is_paid = models.BooleanField(default=False)
-    refid = models.CharField(max_length=200, null=True, blank=True)
+    time_slot = models.ForeignKey(TimeSlot, on_delete=models.CASCADE, verbose_name= 'تایم')
+    full_name = models.CharField(max_length=100, verbose_name= 'نام و نام خانوادگی')
+    phone_number = models.CharField(max_length=15, verbose_name='موبایل')
+    confirmed = models.BooleanField(default=False, verbose_name='تایید')
+    is_paid = models.BooleanField(default=False, verbose_name='پرداخت شده')
+    refid = models.CharField(max_length=200, null=True, blank=True, verbose_name='شناسه پرداخت')
 
     class Meta:
         verbose_name_plural = 'رزرو ها'
@@ -75,12 +75,12 @@ class Booking(models.Model):
 
 
 class Adineh(models.Model):
-    name = models.CharField(max_length=100)
-    phone_number = models.CharField(max_length=15)
-    age = models.IntegerField()
-    confirmed = models.BooleanField(default=False)
-    is_paid = models.BooleanField(default=False)
-    refid = models.CharField(max_length=200, null=True, blank=True)
+    name = models.CharField(max_length=100, verbose_name= 'نام و نام خانوادگی')
+    phone_number = models.CharField(max_length=15, verbose_name= 'موبایل')
+    age = models.IntegerField(verbose_name= 'سن')
+    confirmed = models.BooleanField(default=False, verbose_name= 'تایید')
+    is_paid = models.BooleanField(default=False, verbose_name= 'پرداخت شده')
+    refid = models.CharField(max_length=200, null=True, blank=True, verbose_name= 'شناسه پرداخت')
 
     class Meta:
         verbose_name_plural = 'آدینه ها'
@@ -91,8 +91,8 @@ class Adineh(models.Model):
 
 
 class match_tree(models.Model):
-    name = models.CharField(max_length=100)
-    tree = models.ImageField(upload_to='treepic')
+    name = models.CharField(max_length=100, verbose_name= 'نام')
+    tree = models.ImageField(upload_to='treepic', verbose_name='درخت')
 
     class Meta:
         verbose_name_plural = 'جدول های مسابقه'
@@ -103,8 +103,8 @@ class match_tree(models.Model):
 
 
 class price(models.Model):
-    Time = models.IntegerField()
-    Adineh = models.IntegerField()
+    Time = models.IntegerField(verbose_name= 'قیمت رزرو تایم')
+    Adineh = models.IntegerField(verbose_name= 'قیمت ثبت نام آدینه')
 
     class Meta:
         verbose_name_plural = 'قیمت ها'

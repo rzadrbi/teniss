@@ -3,6 +3,8 @@ from django.urls import reverse
 from django.utils import timezone
 from datetime import timedelta
 
+from jdatetime import jalali
+from persiantools.jdatetime import JalaliDate
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import ListView
 import pandas as pd
@@ -182,6 +184,8 @@ def send_request(request, pk):
 
 
 def verify_payment(request):
+    api = 'https://eitaayar.ir/api'
+    token = "/bot259971:95b0266c-6494-4b5e-9767-fd6e1fd8305e/"
     authority = request.GET['Authority']
     Price = price.objects.all().first()
     booking_id = request.session['booking_id']
@@ -203,6 +207,15 @@ def verify_payment(request):
             booking.save()
             Tslot.available = False
             Tslot.save()
+            reservDate = JalaliDate(Tslot.date)
+            txt = f'''***رزرو تایم***
+            روز : {reservDate}
+            ساعت:{Tslot.start_time}--{Tslot.end_time}
+            کاربر :{booking.full_name}
+            موبایل:{booking.phone_number}
+            شناسه پرداخت:{booking.refid}'''
+            response2 = requests.get(
+                api + token + 'sendMessage' + '?' + 'chat_id=' + 'partotennis' + '&' + '&text=' + f'{txt}')
             return render(request, 'SucPay.html', {"booking": booking,
                                                    "Tslot": Tslot,
                                                    'RefID': response['RefID']})
@@ -268,6 +281,8 @@ def send_request_adineh(request, pk):
 
 
 def verify_payment_adineh(request):
+    api = 'https://eitaayar.ir/api'
+    token = "/bot259971:95b0266c-6494-4b5e-9767-fd6e1fd8305e/"
     authority = request.GET['Authority']
     Price = price.objects.all().first()
     adineh_id = request.session['adineh_id']
@@ -286,6 +301,13 @@ def verify_payment_adineh(request):
             adineh.is_paid = True
             adineh.refid = response['RefID']
             adineh.save()
+            txt = f'''***ثبت نام آدینه***
+            نام : {adineh.name}
+            موبایل : {adineh.phone_number}
+            سن : {adineh.age}
+            شناسه پرداخت:{adineh.refid}'''
+            response2 = requests.get(
+                api + token + 'sendMessage' + '?' + 'chat_id=' + 'partotennis_adineh' + '&' + '&text=' + f'{txt}')
             return render(request, 'SucPay_adineh.html', {"adineh": adineh,
                                                           'RefID': response['RefID']})
         else:
