@@ -13,9 +13,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-bqr=++vmvx4-yz(0(7^5rw@&hsy7&)y75s4_l(s5==nl!8w803'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['partotennis.ir', 'www.partotennis.ir']
 
 # Application definition
 
@@ -151,3 +151,9 @@ JALALI_DATE_DEFAULTS = {
 MERCHANT = 'bfe71cb3-ff76-45fc-802d-0e972c6a909d'
 SANDBOX = False
 
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = False
+
+CORS_ALLOW_ALL_ORIGINS = True
+CSRF_TRUSTED_ORIGINS = ['partotennis.ir', 'www.partotennis.ir', 'https://partotennis.ir', 'https://www.partotennis.ir']

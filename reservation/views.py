@@ -2,6 +2,8 @@ from django.shortcuts import render, get_object_or_404, redirect, HttpResponse
 from django.urls import reverse
 from django.utils import timezone
 from datetime import timedelta
+
+from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import ListView
 import pandas as pd
 from django.shortcuts import render
@@ -158,7 +160,7 @@ def send_request(request, pk):
         "Amount": Price.Time,
         "Description": description,
         "Phone": booking.phone_number,
-        "CallbackURL": 'http://partotennis.ir//verify',
+        "CallbackURL": 'http://partotennis.ir/verify',
     }
     request.session['booking_id'] = str(booking.id)
     data = json.dumps(data)
@@ -244,7 +246,7 @@ def send_request_adineh(request, pk):
         "Amount": Price.Adineh,
         "Description": description,
         "Phone": adineh.phone_number,
-        "CallbackURL": 'http://partotennis.ir//verify_adineh',
+        "CallbackURL": 'http://partotennis.ir/verify_adineh',
     }
     request.session['adineh_id'] = str(adineh.id)
     data = json.dumps(data)
