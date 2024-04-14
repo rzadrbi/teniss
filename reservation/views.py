@@ -98,7 +98,7 @@ class AdinehList(ListView):
     def get_queryset(self):
         return Adineh.objects.filter(confirmed=True, is_paid=True)
 
-
+@csrf_exempt
 def PreReserv(request, id):
     Tslot = get_object_or_404(TimeSlot, id=id, available=True)
     text = texts.objects.all().first()
@@ -124,7 +124,7 @@ def match_tree_view(request):
     text = texts.objects.all().first()
     return render(request, 'match_tree.html', {'MatchTree': tree, "text": text})
 
-
+@csrf_exempt
 def factor(request, pk):
     booking = Booking.objects.get(id=pk)
     Tslot = TimeSlot.objects.get(booking=booking)
@@ -225,7 +225,7 @@ def verify_payment(request):
     booking.delete()
     return render(request, 'FailPay.html')
 
-
+@csrf_exempt
 def PreAdineh(request):
     if request.method == 'GET':
         text = texts.objects.all().first()
@@ -240,7 +240,7 @@ def PreAdineh(request):
             adenine.save()
             return redirect('reservation:factor_adineh', pk=adenine.id)
 
-
+@csrf_exempt
 def FactorAdineh(request, pk):
     adineh = Adineh.objects.get(id=pk)
     if request.method == 'GET':

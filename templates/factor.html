@@ -28,7 +28,6 @@
                     <div class="col-md-4 col-md-pull-7">
                         <div class="booking-form font">
                             <form method="post">
-                                {% csrf_token %}
                                 <div class="form-group">
                                     <p style="text-align: right">:تایم مورد نظر</p>
                                     <p style="text-align: center">{{ booking.time_slot.date | to_jalali:'%y/%m/%d' }}<br>
