@@ -148,7 +148,7 @@ JALALI_DATE_DEFAULTS = {
 
 
 # zarinpal config
-MERCHANT = ''
+# MERCHANT = ''
 SANDBOX = False
 
 SESSION_COOKIE_SECURE = True
