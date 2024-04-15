@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="234687ae-0ae9-4705-8c02-3729aa865e00" name="Changes" comment="fix the csrf">
+    <list default="true" id="234687ae-0ae9-4705-8c02-3729aa865e00" name="Changes" comment="fix the csrf2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Teniss/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Teniss/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservation/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservation/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/PreAdineh.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/PreAdineh.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/factor.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/factor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/factor_adineh.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/factor_adineh.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/reserve.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reserve.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -284,6 +279,7 @@
       <workItem from="1712682051494" duration="27912000" />
       <workItem from="1712745039026" duration="9623000" />
       <workItem from="1713028889145" duration="2231000" />
+      <workItem from="1713101014486" duration="668000" />
     </task>
     <task id="LOCAL-00001" summary="before testing git repos">
       <option name="closed" value="true" />
@@ -453,7 +449,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712721042696</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="fix the csrf2">
+      <option name="closed" value="true" />
+      <created>1713101092223</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1713101092223</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -491,7 +495,8 @@
     <MESSAGE value="try to set payment" />
     <MESSAGE value="maybe done !" />
     <MESSAGE value="fix the csrf" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix the csrf" />
+    <MESSAGE value="fix the csrf2" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix the csrf2" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Teniss$views.coverage" NAME="views Coverage Results" MODIFIED="1712699733461" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/reservation" />
