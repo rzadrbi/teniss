@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="234687ae-0ae9-4705-8c02-3729aa865e00" name="Changes" comment="fix the csrf2">
+    <list default="true" id="234687ae-0ae9-4705-8c02-3729aa865e00" name="Changes" comment="MER">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Teniss/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Teniss/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/factor.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/factor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +91,7 @@
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
     &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/rzadrbi/PycharmProjects/Teniss&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/rzadrbi/PycharmProjects/Teniss/reservation&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -103,11 +103,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/reservation" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/assets/img" />
       <recent name="$PROJECT_DIR$/assets/fonts" />
       <recent name="$PROJECT_DIR$/assets" />
-      <recent name="$PROJECT_DIR$/templates" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/database" />
@@ -210,10 +210,10 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Django Server.Teniss" />
       <item itemvalue="Python.days" />
       <item itemvalue="Python.jdate" />
       <item itemvalue="Python.views" />
+      <item itemvalue="Django Server.Teniss" />
     </list>
     <recent_temporary>
       <list>
@@ -280,6 +280,12 @@
       <workItem from="1712745039026" duration="9623000" />
       <workItem from="1713028889145" duration="2231000" />
       <workItem from="1713101014486" duration="668000" />
+      <workItem from="1713176405683" duration="241000" />
+      <workItem from="1713178241192" duration="3000" />
+      <workItem from="1713178540363" duration="17000" />
+      <workItem from="1713179940556" duration="1350000" />
+      <workItem from="1713563463998" duration="2000" />
+      <workItem from="1713699617473" duration="6983000" />
     </task>
     <task id="LOCAL-00001" summary="before testing git repos">
       <option name="closed" value="true" />
@@ -457,7 +463,23 @@
       <option name="project" value="LOCAL" />
       <updated>1713101092223</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="MER">
+      <option name="closed" value="true" />
+      <created>1713176430092</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1713176430092</updated>
+    </task>
+    <task id="LOCAL-00024" summary="MER">
+      <option name="closed" value="true" />
+      <created>1713176563603</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1713176563603</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -496,7 +518,8 @@
     <MESSAGE value="maybe done !" />
     <MESSAGE value="fix the csrf" />
     <MESSAGE value="fix the csrf2" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix the csrf2" />
+    <MESSAGE value="MER" />
+    <option name="LAST_COMMIT_MESSAGE" value="MER" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Teniss$views.coverage" NAME="views Coverage Results" MODIFIED="1712699733461" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/reservation" />

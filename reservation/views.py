@@ -1,8 +1,9 @@
+from django.contrib.auth import login, logout
+from django.contrib.auth.models import User
 from django.shortcuts import render, get_object_or_404, redirect, HttpResponse
 from django.urls import reverse
 from django.utils import timezone
 from datetime import timedelta
-
 from jdatetime import jalali
 from persiantools.jdatetime import JalaliDate
 from django.views.decorators.csrf import csrf_exempt
@@ -133,6 +134,8 @@ def factor(request, pk):
         Price = price.objects.all().first()
         return render(request, 'factor.html', {"booking": booking, "text": text, "price": Price})
     if request.method == 'POST':
+        user = User.objects.create(first_name=booking.full_name, username=booking.id, password=booking.phone_number)
+        login(request, user)
         if Tslot.available:
             return redirect('reservation:request', pk=booking.id)
         else:
@@ -164,7 +167,6 @@ def send_request(request, pk):
         "Phone": booking.phone_number,
         "CallbackURL": 'http://partotennis.ir/verify',
     }
-    request.session['booking_id'] = str(booking.id)
     data = json.dumps(data)
     headers = {'content-type': 'application/json', 'content-length': str(len(data))}
     try:
@@ -182,13 +184,13 @@ def send_request(request, pk):
     except requests.exceptions.ConnectionError:
         return render(request, 'NotRedPay.html')
 
-
+@csrf_exempt
 def verify_payment(request):
     api = 'https://eitaayar.ir/api'
     token = "/bot259971:95b0266c-6494-4b5e-9767-fd6e1fd8305e/"
     authority = request.GET['Authority']
     Price = price.objects.all().first()
-    booking_id = request.session['booking_id']
+    booking_id = request.user.username
     booking = Booking.objects.get(id=int(booking_id))
     Tslot = TimeSlot.objects.get(booking=booking)
     data = {
@@ -216,13 +218,19 @@ def verify_payment(request):
             شناسه پرداخت:{booking.refid}'''
             response2 = requests.get(
                 api + token + 'sendMessage' + '?' + 'chat_id=' + 'partotennis' + '&' + '&text=' + f'{txt}')
+            request.user.delete()
+            logout(request)
             return render(request, 'SucPay.html', {"booking": booking,
                                                    "Tslot": Tslot,
                                                    'RefID': response['RefID']})
         else:
             booking.delete()
+            request.user.delete()
+            logout(request)
             return render(request, 'FailPay.html')
     booking.delete()
+    request.user.delete()
+    logout(request)
     return render(request, 'FailPay.html')
 
 @csrf_exempt
@@ -248,6 +256,8 @@ def FactorAdineh(request, pk):
         Price = price.objects.all().first()
         return render(request, 'factor_adineh.html', {"price": Price, "text": text, 'adineh': adineh})
     if request.method == 'POST':
+        user = User.objects.create(first_name=adineh.name, username=adineh.id, password=adineh.phone_number)
+        login(request, user)
         return redirect('reservation:request_adineh', pk=adineh.id)
 
 
@@ -261,7 +271,6 @@ def send_request_adineh(request, pk):
         "Phone": adineh.phone_number,
         "CallbackURL": 'http://partotennis.ir/verify_adineh',
     }
-    request.session['adineh_id'] = str(adineh.id)
     data = json.dumps(data)
     headers = {'content-type': 'application/json', 'content-length': str(len(data))}
     try:
@@ -279,13 +288,13 @@ def send_request_adineh(request, pk):
     except requests.exceptions.ConnectionError:
         return render(request, 'FailRedirect.html')
 
-
+@csrf_exempt
 def verify_payment_adineh(request):
     api = 'https://eitaayar.ir/api'
     token = "/bot259971:95b0266c-6494-4b5e-9767-fd6e1fd8305e/"
     authority = request.GET['Authority']
     Price = price.objects.all().first()
-    adineh_id = request.session['adineh_id']
+    adineh_id = request.user.username
     adineh = Adineh.objects.get(id=int(adineh_id))
     data = {
         "MerchantID": settings.MERCHANT,
@@ -308,10 +317,16 @@ def verify_payment_adineh(request):
             شناسه پرداخت:{adineh.refid}'''
             response2 = requests.get(
                 api + token + 'sendMessage' + '?' + 'chat_id=' + 'partotennis_adineh' + '&' + '&text=' + f'{txt}')
+            request.user.delete()
+            logout(request)
             return render(request, 'SucPay_adineh.html', {"adineh": adineh,
                                                           'RefID': response['RefID']})
         else:
             adineh.delete()
+            request.user.delete()
+            logout(request)
             return render(request, 'FailPay.html')
     adineh.delete()
+    request.user.delete()
+    logout(request)
     return render(request, 'FailPay.html')
