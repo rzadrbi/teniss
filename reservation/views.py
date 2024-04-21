@@ -15,7 +15,7 @@ from django.conf import settings
 import requests
 import json
 
-
+#main page
 def index(request):
     text = texts.objects.all().first()
     today = timezone.localtime(timezone.now()).date()
@@ -330,3 +330,4 @@ def verify_payment_adineh(request):
     request.user.delete()
     logout(request)
     return render(request, 'FailPay.html')
+
