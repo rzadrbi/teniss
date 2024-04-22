@@ -156,5 +156,5 @@ CSRF_COOKIE_SECURE = True
 SECURE_SSL_REDIRECT = False
 
 CORS_ALLOW_ALL_ORIGINS = True
-CSRF_TRUSTED_ORIGINS = ['partotennis.ir', 'www.partotennis.ir', 'https://partotennis.ir', 'https://www.partotennis.ir',
-                        'http://partotennis.ir', 'http://www.partotennis.ir', '*', 'localhost']
+CSRF_TRUSTED_ORIGINS = ['https://partotennis.ir', 'https://www.partotennis.ir',
+                        'http://partotennis.ir', 'http://www.partotennis.ir',]
