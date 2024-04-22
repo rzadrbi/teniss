@@ -15,7 +15,7 @@ SECRET_KEY = 'django-insecure-bqr=++vmvx4-yz(0(7^5rw@&hsy7&)y75s4_l(s5==nl!8w803
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['partotennis.ir', 'www.partotennis.ir',]
+ALLOWED_HOSTS = ['partotennis.ir', 'www.partotennis.ir', '*', 'localhost']
 
 # Application definition
 
@@ -157,4 +157,4 @@ SECURE_SSL_REDIRECT = False
 
 CORS_ALLOW_ALL_ORIGINS = True
 CSRF_TRUSTED_ORIGINS = ['partotennis.ir', 'www.partotennis.ir', 'https://partotennis.ir', 'https://www.partotennis.ir',
-                        'http://partotennis.ir', 'http://www.partotennis.ir']
+                        'http://partotennis.ir', 'http://www.partotennis.ir', '*', 'localhost']

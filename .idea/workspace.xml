@@ -7,7 +7,10 @@
     <list default="true" id="234687ae-0ae9-4705-8c02-3729aa865e00" name="Changes" comment="MER">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Teniss/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Teniss/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/tests.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/reservation/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/factor.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/factor.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +37,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="35d1697a8d218c84c2d6fc11500866404b304e1f" />
+        <entry key="$PROJECT_DIR$" value="2d7614e1328a713b5aec1601d5d197a34aa071d6" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -210,10 +213,10 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Django Server.Teniss" />
       <item itemvalue="Python.days" />
       <item itemvalue="Python.jdate" />
       <item itemvalue="Python.views" />
-      <item itemvalue="Django Server.Teniss" />
     </list>
     <recent_temporary>
       <list>
@@ -286,6 +289,10 @@
       <workItem from="1713179940556" duration="1350000" />
       <workItem from="1713563463998" duration="2000" />
       <workItem from="1713699617473" duration="6983000" />
+      <workItem from="1713772188055" duration="3007000" />
+      <workItem from="1713781219478" duration="8477000" />
+      <workItem from="1713791930247" duration="275000" />
+      <workItem from="1713794472851" duration="2328000" />
     </task>
     <task id="LOCAL-00001" summary="before testing git repos">
       <option name="closed" value="true" />

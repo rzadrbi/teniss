@@ -15,6 +15,7 @@ from django.conf import settings
 import requests
 import json
 
+
 #main page
 def index(request):
     text = texts.objects.all().first()
@@ -99,6 +100,7 @@ class AdinehList(ListView):
     def get_queryset(self):
         return Adineh.objects.filter(confirmed=True, is_paid=True)
 
+
 @csrf_exempt
 def PreReserv(request, id):
     Tslot = get_object_or_404(TimeSlot, id=id, available=True)
@@ -110,6 +112,8 @@ def PreReserv(request, id):
         phone = request.POST.get('user_phone')
         booking = Booking.objects.create(full_name=name, phone_number=phone, time_slot=Tslot)
         booking.save()
+        user = User.objects.create(first_name=booking.full_name, username=booking.id, password=booking.phone_number)
+        login(request, user)
         Tslot.save()
         return redirect('reservation:factor', pk=booking.id)
 
@@ -125,6 +129,7 @@ def match_tree_view(request):
     text = texts.objects.all().first()
     return render(request, 'match_tree.html', {'MatchTree': tree, "text": text})
 
+
 @csrf_exempt
 def factor(request, pk):
     booking = Booking.objects.get(id=pk)
@@ -134,8 +139,6 @@ def factor(request, pk):
         Price = price.objects.all().first()
         return render(request, 'factor.html', {"booking": booking, "text": text, "price": Price})
     if request.method == 'POST':
-        user = User.objects.create(first_name=booking.full_name, username=booking.id, password=booking.phone_number)
-        login(request, user)
         if Tslot.available:
             return redirect('reservation:request', pk=booking.id)
         else:
@@ -151,10 +154,6 @@ ZP_API_VERIFY = f"https://{sandbox}.zarinpal.com/pg/rest/WebGate/PaymentVerifica
 ZP_API_STARTPAY = f"https://{sandbox}.zarinpal.com/pg/StartPay/"
 description = "توضیحات مربوط به تراکنش را در این قسمت وارد کنید"  # Required
 phone = 'YOUR_PHONE_NUMBER'  # Optional
-
-
-# Important: need to edit for realy server.
-# CallbackURL = reverse(urlconf='reservation.urls', viewname='reservation:verify')str(reverse('reservation:verify'))
 
 
 def send_request(request, pk):
@@ -184,6 +183,7 @@ def send_request(request, pk):
     except requests.exceptions.ConnectionError:
         return render(request, 'NotRedPay.html')
 
+
 @csrf_exempt
 def verify_payment(request):
     api = 'https://eitaayar.ir/api'
@@ -191,7 +191,7 @@ def verify_payment(request):
     authority = request.GET['Authority']
     Price = price.objects.all().first()
     booking_id = request.user.username
-    booking = Booking.objects.get(id=int(booking_id))
+    booking = Booking.objects.get(id=int(float(booking_id)))
     Tslot = TimeSlot.objects.get(booking=booking)
     data = {
         "MerchantID": settings.MERCHANT,
@@ -233,6 +233,7 @@ def verify_payment(request):
     logout(request)
     return render(request, 'FailPay.html')
 
+
 @csrf_exempt
 def PreAdineh(request):
     if request.method == 'GET':
@@ -246,7 +247,10 @@ def PreAdineh(request):
         if user_fullname and user_phone and user_age:
             adenine = Adineh.objects.create(name=user_fullname, phone_number=user_phone, age=user_age)
             adenine.save()
+            user = User.objects.create(first_name=adenine.name, username=adenine.id, password=adenine.phone_number)
+            login(request, user)
             return redirect('reservation:factor_adineh', pk=adenine.id)
+
 
 @csrf_exempt
 def FactorAdineh(request, pk):
@@ -256,8 +260,6 @@ def FactorAdineh(request, pk):
         Price = price.objects.all().first()
         return render(request, 'factor_adineh.html', {"price": Price, "text": text, 'adineh': adineh})
     if request.method == 'POST':
-        user = User.objects.create(first_name=adineh.name, username=adineh.id, password=adineh.phone_number)
-        login(request, user)
         return redirect('reservation:request_adineh', pk=adineh.id)
 
 
@@ -287,6 +289,7 @@ def send_request_adineh(request, pk):
         return render(request, 'FailRedirect.html')
     except requests.exceptions.ConnectionError:
         return render(request, 'FailRedirect.html')
+
 
 @csrf_exempt
 def verify_payment_adineh(request):
@@ -330,4 +333,3 @@ def verify_payment_adineh(request):
     request.user.delete()
     logout(request)
     return render(request, 'FailPay.html')
-
