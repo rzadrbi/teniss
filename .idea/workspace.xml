@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="234687ae-0ae9-4705-8c02-3729aa865e00" name="Changes" comment="runflare git" />
+    <list default="true" id="234687ae-0ae9-4705-8c02-3729aa865e00" name="Changes" comment="fix the CSRF_TRUSTED_ORIGINS" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -286,6 +286,7 @@
       <workItem from="1713781219478" duration="8477000" />
       <workItem from="1713791930247" duration="275000" />
       <workItem from="1713794472851" duration="2749000" />
+      <workItem from="1713825948042" duration="373000" />
     </task>
     <task id="LOCAL-00001" summary="before testing git repos">
       <option name="closed" value="true" />
@@ -487,7 +488,23 @@
       <option name="project" value="LOCAL" />
       <updated>1713820716935</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="redeploy">
+      <option name="closed" value="true" />
+      <created>1713826007678</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1713826007678</updated>
+    </task>
+    <task id="LOCAL-00027" summary="fix the CSRF_TRUSTED_ORIGINS">
+      <option name="closed" value="true" />
+      <created>1713826201147</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1713826201148</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -528,7 +545,9 @@
     <MESSAGE value="fix the csrf2" />
     <MESSAGE value="MER" />
     <MESSAGE value="runflare git" />
-    <option name="LAST_COMMIT_MESSAGE" value="runflare git" />
+    <MESSAGE value="redeploy" />
+    <MESSAGE value="fix the CSRF_TRUSTED_ORIGINS" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix the CSRF_TRUSTED_ORIGINS" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Teniss$views.coverage" NAME="views Coverage Results" MODIFIED="1712699733461" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/reservation" />

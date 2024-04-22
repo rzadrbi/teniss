@@ -13,7 +13,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-bqr=++vmvx4-yz(0(7^5rw@&hsy7&)y75s4_l(s5==nl!8w803'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['partotennis.ir', 'www.partotennis.ir', '*', 'localhost']
 
