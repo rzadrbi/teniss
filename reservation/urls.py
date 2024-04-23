@@ -18,5 +18,4 @@ urlpatterns = [
     path('request_adineh/<int:pk>', views.send_request_adineh, name='request_adineh'),
     path('verify/', views.verify_payment, name='verify'),
     path('verify_adineh/', views.verify_payment_adineh, name='verify_adineh'),
-    path('logout/', views.signout, name='logout'),
 ]

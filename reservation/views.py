@@ -112,8 +112,6 @@ def PreReserv(request, id):
         phone = request.POST.get('user_phone')
         booking = Booking.objects.create(full_name=name, phone_number=phone, time_slot=Tslot)
         booking.save()
-        user = User.objects.create(first_name=booking.full_name, username=booking.id, password=booking.phone_number)
-        login(request, user)
         Tslot.save()
         return redirect('reservation:factor', pk=booking.id)
 
@@ -139,6 +137,8 @@ def factor(request, pk):
         Price = price.objects.all().first()
         return render(request, 'factor.html', {"booking": booking, "text": text, "price": Price})
     if request.method == 'POST':
+        user = User.objects.create(first_name=booking.full_name, username=booking.id, password=booking.phone_number)
+        login(request, user)
         if Tslot.available:
             return redirect('reservation:request', pk=booking.id)
         else:
@@ -176,11 +176,17 @@ def send_request(request, pk):
                 url = f"{ZP_API_STARTPAY}{response['Authority']}"
                 return redirect(url)
             else:
+                request.user.delete()
+                logout(request)
                 return render(request, 'NotRedPay.html')
         return response
     except requests.exceptions.Timeout:
+        request.user.delete()
+        logout(request)
         return render(request, 'NotRedPay.html')
     except requests.exceptions.ConnectionError:
+        request.user.delete()
+        logout(request)
         return render(request, 'NotRedPay.html')
 
 
@@ -247,8 +253,6 @@ def PreAdineh(request):
         if user_fullname and user_phone and user_age:
             adenine = Adineh.objects.create(name=user_fullname, phone_number=user_phone, age=user_age)
             adenine.save()
-            user = User.objects.create(first_name=adenine.name, username=adenine.id, password=adenine.phone_number)
-            login(request, user)
             return redirect('reservation:factor_adineh', pk=adenine.id)
 
 
@@ -260,6 +264,8 @@ def FactorAdineh(request, pk):
         Price = price.objects.all().first()
         return render(request, 'factor_adineh.html', {"price": Price, "text": text, 'adineh': adineh})
     if request.method == 'POST':
+        user = User.objects.create(first_name=adineh.name, username=adineh.id, password=adineh.phone_number)
+        login(request, user)
         return redirect('reservation:request_adineh', pk=adineh.id)
 
 
@@ -283,11 +289,17 @@ def send_request_adineh(request, pk):
                 url = f"{ZP_API_STARTPAY}{response['Authority']}"
                 return redirect(url)
             else:
+                request.user.delete()
+                logout(request)
                 return render(request, 'FailRedirect.html')
         return response
     except requests.exceptions.Timeout:
+        request.user.delete()
+        logout(request)
         return render(request, 'FailRedirect.html')
     except requests.exceptions.ConnectionError:
+        request.user.delete()
+        logout(request)
         return render(request, 'FailRedirect.html')
 
 
@@ -334,10 +346,4 @@ def verify_payment_adineh(request):
     logout(request)
     return render(request, 'FailPay.html')
 
-
-def signout(request):
-    user = User.objects.get(username=request.user.username)
-    logout(request)
-    user.delete()
-    return redirect('reservation:index')
 
