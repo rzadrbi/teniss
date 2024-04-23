@@ -333,3 +333,8 @@ def verify_payment_adineh(request):
     request.user.delete()
     logout(request)
     return render(request, 'FailPay.html')
+
+
+def signout(request):
+    logout(request)
+    return redirect('reservation:index')
