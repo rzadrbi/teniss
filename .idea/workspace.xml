@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="234687ae-0ae9-4705-8c02-3729aa865e00" name="Changes" comment="GOD F1!">
+    <list default="true" id="234687ae-0ae9-4705-8c02-3729aa865e00" name="Changes" comment="remove post target">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/factor.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/factor.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -290,7 +289,7 @@
       <workItem from="1713791930247" duration="275000" />
       <workItem from="1713794472851" duration="2749000" />
       <workItem from="1713825948042" duration="1737000" />
-      <workItem from="1713832789132" duration="300000" />
+      <workItem from="1713832789132" duration="1506000" />
     </task>
     <task id="LOCAL-00001" summary="before testing git repos">
       <option name="closed" value="true" />
@@ -516,7 +515,23 @@
       <option name="project" value="LOCAL" />
       <updated>1713827097352</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="remove post target">
+      <option name="closed" value="true" />
+      <created>1713833105928</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1713833105928</updated>
+    </task>
+    <task id="LOCAL-00030" summary="remove post target">
+      <option name="closed" value="true" />
+      <created>1713833346363</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1713833346363</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -560,7 +575,8 @@
     <MESSAGE value="redeploy" />
     <MESSAGE value="fix the CSRF_TRUSTED_ORIGINS" />
     <MESSAGE value="GOD F1!" />
-    <option name="LAST_COMMIT_MESSAGE" value="GOD F1!" />
+    <MESSAGE value="remove post target" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove post target" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Teniss$views.coverage" NAME="views Coverage Results" MODIFIED="1712699733461" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/reservation" />

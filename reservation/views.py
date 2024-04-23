@@ -164,7 +164,7 @@ def send_request(request, pk):
         "Amount": Price.Time,
         "Description": description,
         "Phone": booking.phone_number,
-        "CallbackURL": 'http://partotennis.ir/verify',
+        "CallbackURL": 'https://partotennis.ir/verify',
     }
     data = json.dumps(data)
     headers = {'content-type': 'application/json', 'content-length': str(len(data))}
@@ -271,7 +271,7 @@ def send_request_adineh(request, pk):
         "Amount": Price.Adineh,
         "Description": description,
         "Phone": adineh.phone_number,
-        "CallbackURL": 'http://partotennis.ir/verify_adineh',
+        "CallbackURL": 'https://partotennis.ir/verify_adineh',
     }
     data = json.dumps(data)
     headers = {'content-type': 'application/json', 'content-length': str(len(data))}
