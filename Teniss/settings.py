@@ -150,7 +150,7 @@ JALALI_DATE_DEFAULTS = {
 # zarinpal config
 MERCHANT = 'bfe71cb3-ff76-45fc-802d-0e972c6a909d'
 SANDBOX = False
-
+# cookies
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 SECURE_SSL_REDIRECT = False
