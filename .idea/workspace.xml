@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="234687ae-0ae9-4705-8c02-3729aa865e00" name="Changes" comment="logout 2">
+    <list default="true" id="234687ae-0ae9-4705-8c02-3729aa865e00" name="Changes" comment="fix the logout">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/factor.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/factor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/factor_adineh.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/factor_adineh.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -292,7 +291,7 @@
       <workItem from="1713794472851" duration="2749000" />
       <workItem from="1713825948042" duration="1737000" />
       <workItem from="1713832789132" duration="1506000" />
-      <workItem from="1713883042315" duration="753000" />
+      <workItem from="1713883042315" duration="1904000" />
     </task>
     <task id="LOCAL-00001" summary="before testing git repos">
       <option name="closed" value="true" />
@@ -550,7 +549,23 @@
       <option name="project" value="LOCAL" />
       <updated>1713883458303</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="button">
+      <option name="closed" value="true" />
+      <created>1713883802545</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1713883802545</updated>
+    </task>
+    <task id="LOCAL-00034" summary="fix the logout">
+      <option name="closed" value="true" />
+      <created>1713884549746</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1713884549746</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -597,7 +612,9 @@
     <MESSAGE value="remove post target" />
     <MESSAGE value="logout" />
     <MESSAGE value="logout 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="logout 2" />
+    <MESSAGE value="button" />
+    <MESSAGE value="fix the logout" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix the logout" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Teniss$views.coverage" NAME="views Coverage Results" MODIFIED="1712699733461" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/reservation" />

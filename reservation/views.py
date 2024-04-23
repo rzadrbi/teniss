@@ -337,7 +337,7 @@ def verify_payment_adineh(request):
 
 def signout(request):
     user = User.objects.get(username=request.user.username)
-    user.delete()
     logout(request)
+    user.delete()
     return redirect('reservation:index')
 
