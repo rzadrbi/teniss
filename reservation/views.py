@@ -137,7 +137,7 @@ def factor(request, pk):
         Price = price.objects.all().first()
         return render(request, 'factor.html', {"booking": booking, "text": text, "price": Price})
     if request.method == 'POST':
-        user = User.objects.create(first_name=booking.full_name, username=booking.id, password=booking.phone_number)
+        user = User.objects.create(first_name=booking.full_name, username=booking.id, password=booking.phone_number,)
         login(request, user)
         if Tslot.available:
             return redirect('reservation:request', pk=booking.id)
@@ -158,6 +158,8 @@ phone = 'YOUR_PHONE_NUMBER'  # Optional
 
 def send_request(request, pk):
     booking = Booking.objects.get(id=pk)
+    time_slot = TimeSlot.objects.get(booking=booking)
+    request.session['Tslot_id'] = time_slot.id
     Price = price.objects.all().first()
     data = {
         "MerchantID": settings.MERCHANT,
@@ -197,10 +199,10 @@ def verify_payment(request):
     authority = request.GET['Authority']
     Price = price.objects.all().first()
     booking_id = request.user.username
-    booking = Booking.objects.get(id=int(float(booking_id)))
+    booking = Booking.objects.get(id=int(booking_id))
     Tslot = TimeSlot.objects.get(booking=booking)
-    data = {
-        "MerchantID": settings.MERCHANT,
+    tslot = TimeSlot.objects.get(id=int(request.session['Tslot_id']))
+    data = {"MerchantID": settings.MERCHANT,
         "Amount": Price.Time,
         'Authority': authority,
     }
@@ -209,35 +211,31 @@ def verify_payment(request):
     res = requests.post(ZP_API_VERIFY, data=data, headers=headers)
     if res.status_code == 200:
         response = res.json()
-        if response['Status'] == 100:
-            booking.is_paid = True
-            booking.refid = response['RefID']
-            booking.save()
+        booking.is_paid = True
+        booking.refid = response['RefID']
+        booking.save()
+        Tslot.available = False
+        Tslot.save()
+        reservDate = JalaliDate(Tslot.date)
+        txt = f'''***رزرو تایم***
+        روز : {reservDate}
+        ساعت:{Tslot.start_time}--{Tslot.end_time}
+        کاربر :{booking.full_name}
+        موبایل:{booking.phone_number}
+        شناسه پرداخت:{booking.refid}'''
+        requests.get(api + token + 'sendMessage' + '?' + 'chat_id=' + 'partotennis' + '&' + '&text=' + f'{txt}')
+        request.user.delete()
+        logout(request)
+        if tslot.available == True:
             Tslot.available = False
-            Tslot.save()
-            reservDate = JalaliDate(Tslot.date)
-            txt = f'''***رزرو تایم***
-            روز : {reservDate}
-            ساعت:{Tslot.start_time}--{Tslot.end_time}
-            کاربر :{booking.full_name}
-            موبایل:{booking.phone_number}
-            شناسه پرداخت:{booking.refid}'''
-            response2 = requests.get(
-                api + token + 'sendMessage' + '?' + 'chat_id=' + 'partotennis' + '&' + '&text=' + f'{txt}')
-            request.user.delete()
-            logout(request)
             return render(request, 'SucPay.html', {"booking": booking,
                                                    "Tslot": Tslot,
                                                    'RefID': response['RefID']})
-        else:
-            booking.delete()
-            request.user.delete()
-            logout(request)
-            return render(request, 'FailPay.html')
-    booking.delete()
-    request.user.delete()
-    logout(request)
-    return render(request, 'FailPay.html')
+    else:
+        booking.delete()
+        request.user.delete()
+        logout(request)
+        return render(request, 'FailPay.html')
 
 
 @csrf_exempt
