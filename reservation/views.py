@@ -214,8 +214,6 @@ def verify_payment(request):
         booking.is_paid = True
         booking.refid = response['RefID']
         booking.save()
-        Tslot.available = False
-        Tslot.save()
         reservDate = JalaliDate(Tslot.date)
         txt = f'''***رزرو تایم***
         روز : {reservDate}
@@ -226,9 +224,7 @@ def verify_payment(request):
         requests.get(api + token + 'sendMessage' + '?' + 'chat_id=' + 'partotennis' + '&' + '&text=' + f'{txt}')
         request.user.delete()
         logout(request)
-        if tslot.available == True:
-            Tslot.available = False
-            return render(request, 'SucPay.html', {"booking": booking,
+        return render(request, 'SucPay.html', {"booking": booking,
                                                    "Tslot": Tslot,
                                                    'RefID': response['RefID']})
     else:
