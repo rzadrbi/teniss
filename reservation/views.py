@@ -211,6 +211,8 @@ def verify_payment(request):
     res = requests.post(ZP_API_VERIFY, data=data, headers=headers)
     if res.status_code == 200:
         response = res.json()
+        if response['RefID'] == None:
+            return render(request, 'FailPay.html')
         booking.is_paid = True
         booking.refid = response['RefID']
         booking.save()
