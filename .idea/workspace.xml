@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="234687ae-0ae9-4705-8c02-3729aa865e00" name="Changes" comment="fix the available">
+    <list default="true" id="234687ae-0ae9-4705-8c02-3729aa865e00" name="Changes" comment="fix the failpay">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reservation/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/views.py" afterDir="false" />
     </list>
@@ -294,7 +294,9 @@
       <workItem from="1713883042315" duration="2634000" />
       <workItem from="1714398623515" duration="2084000" />
       <workItem from="1714847876710" duration="5921000" />
-      <workItem from="1714939785448" duration="320000" />
+      <workItem from="1714939785448" duration="1632000" />
+      <workItem from="1716727367709" duration="400000" />
+      <workItem from="1716830671079" duration="1427000" />
     </task>
     <task id="LOCAL-00001" summary="before testing git repos">
       <option name="closed" value="true" />
@@ -592,7 +594,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714852120561</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="fix the failpay">
+      <option name="closed" value="true" />
+      <created>1714940112802</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1714940112802</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -616,7 +626,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="test commit2" />
     <MESSAGE value="fix database dir" />
     <MESSAGE value="test on runflare" />
     <MESSAGE value="fix somth." />
@@ -641,7 +650,8 @@
     <MESSAGE value="fix the logout 2" />
     <MESSAGE value="fix the payment" />
     <MESSAGE value="fix the available" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix the available" />
+    <MESSAGE value="fix the failpay" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix the failpay" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Teniss$views.coverage" NAME="views Coverage Results" MODIFIED="1712699733461" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/reservation" />

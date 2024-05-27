@@ -137,8 +137,6 @@ def factor(request, pk):
         Price = price.objects.all().first()
         return render(request, 'factor.html', {"booking": booking, "text": text, "price": Price})
     if request.method == 'POST':
-        user = User.objects.create(first_name=booking.full_name, username=booking.id, password=booking.phone_number,)
-        login(request, user)
         if Tslot.available:
             return redirect('reservation:request', pk=booking.id)
         else:
@@ -160,6 +158,7 @@ def send_request(request, pk):
     booking = Booking.objects.get(id=pk)
     time_slot = TimeSlot.objects.get(booking=booking)
     request.session['Tslot_id'] = time_slot.id
+    request.session['booking_id'] = booking.id
     Price = price.objects.all().first()
     data = {
         "MerchantID": settings.MERCHANT,
@@ -167,6 +166,7 @@ def send_request(request, pk):
         "Description": description,
         "Phone": booking.phone_number,
         "CallbackURL": 'https://partotennis.ir/verify',
+        # "CallbackURL": 'http://127.0.0.1:8008/verify'
     }
     data = json.dumps(data)
     headers = {'content-type': 'application/json', 'content-length': str(len(data))}
@@ -198,10 +198,8 @@ def verify_payment(request):
     token = "/bot259971:95b0266c-6494-4b5e-9767-fd6e1fd8305e/"
     authority = request.GET['Authority']
     Price = price.objects.all().first()
-    booking_id = request.user.username
-    booking = Booking.objects.get(id=int(booking_id))
-    Tslot = TimeSlot.objects.get(booking=booking)
     tslot = TimeSlot.objects.get(id=int(request.session['Tslot_id']))
+    booking = Booking.objects.get(id=int(request.session['booking_id']))
     data = {"MerchantID": settings.MERCHANT,
         "Amount": Price.Time,
         'Authority': authority,
@@ -216,23 +214,19 @@ def verify_payment(request):
         booking.is_paid = True
         booking.refid = response['RefID']
         booking.save()
-        reservDate = JalaliDate(Tslot.date)
+        reservDate = JalaliDate(tslot.date)
         txt = f'''***رزرو تایم***
         روز : {reservDate}
-        ساعت:{Tslot.start_time}--{Tslot.end_time}
+        ساعت:{tslot.start_time}--{tslot.end_time}
         کاربر :{booking.full_name}
         موبایل:{booking.phone_number}
         شناسه پرداخت:{booking.refid}'''
         requests.get(api + token + 'sendMessage' + '?' + 'chat_id=' + 'partotennis' + '&' + '&text=' + f'{txt}')
-        request.user.delete()
-        logout(request)
         return render(request, 'SucPay.html', {"booking": booking,
-                                                   "Tslot": Tslot,
+                                                   "Tslot": tslot,
                                                    'RefID': response['RefID']})
     else:
         booking.delete()
-        request.user.delete()
-        logout(request)
         return render(request, 'FailPay.html')
 
 
